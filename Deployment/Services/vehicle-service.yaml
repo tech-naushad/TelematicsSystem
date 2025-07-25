@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vehicle-service
+  namespace: ns-telematics-system
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: vehicle-service
+  template:
+    metadata:
+      labels:
+        app: vehicle-service
+    spec:
+      containers:
+      - name: vehicle-service
+        image: naushad79/vehicle-service:v2
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5000
+          name: http
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: vehicle-service
+  namespace: ns-telematics-system
+  labels:
+    app: vehicle-service
+spec:  
+  type: NodePort                        # ✅ moved to correct level
+  selector:
+    app: vehicle-service
+  ports:
+    - port: 5000
+      targetPort: 5000
+      nodePort: 30000
