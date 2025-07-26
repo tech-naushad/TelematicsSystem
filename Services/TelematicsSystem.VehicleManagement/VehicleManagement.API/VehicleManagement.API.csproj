@@ -6,11 +6,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 	<ItemGroup>
-
 		<PackageReference Include="MassTransit.RabbitMQ" Version="8.5.1" />
-
 		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.22.1" />
-
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
 		<PackageReference Include="AutoMapper" Version="15.0.1" />
 		<!--<PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="9.0.0" />-->
@@ -28,7 +25,8 @@
 		<PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
 		<PackageReference Include="TelematicsSystem.Common" Version="1.0.0-dev" />
 		<PackageReference Include="TelematicsSystem.Infrastructure" Version="1.0.0-dev" />
-		<PackageReference Include="TelematicsSystem.Messaging.Consumers" Version="1.0.0" />		 
+		<PackageReference Include="TelematicsSystem.Messaging.Consumers" Version="1.0.0-dev" />
+		<PackageReference Include="TelematicsSystem.Messaging.Contracts" Version="1.0.0-dev" />	
 	</ItemGroup>
 	<ItemGroup>
 	  <ProjectReference Include="..\VehicleManagement.Application\VehicleManagement.Application.csproj" />

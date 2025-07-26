@@ -5,6 +5,7 @@ namespace TelematicsSystem.Messaging.Contracts
     public record VehicleCreatedEvent(
      Guid Id,
      string LicensePlate,
+     string VIN,
      string Manufacturer,
      string Model,
      int Year,

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using VehicleManagement.Domain.Entities;
-using VehicleManagement.Application.DTOs;
+//using VehicleManagement.Application.DTOs;
 
 
 namespace VehicleManagement.Application.MappingProfiles
@@ -9,7 +9,7 @@ namespace VehicleManagement.Application.MappingProfiles
     {
         public ApplicationMappingProfile()
         {
-            CreateMap<VehicleDto, Vehicle>();
+            //CreateMap<VehicleDto, Vehicle>();
         }
     }
 }

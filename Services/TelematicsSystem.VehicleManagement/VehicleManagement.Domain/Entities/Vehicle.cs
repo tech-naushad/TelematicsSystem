@@ -7,39 +7,21 @@ using VehicleManagement.Domain.Enums;
 
 namespace VehicleManagement.Domain.Entities
 {
-    [Table("Vehicles")]
     public class Vehicle: BaseEntity
     {
-        [Key]
         public Guid Id { get; set; } 
-
-        [Required]
-        [MaxLength(100)]
         public string LicensePlate { get; set; }
-
-        [Required]
-        [MaxLength(100)]
         public string VIN { get; set; }
-
-        [Required]
-        [MaxLength(100)]
         public string Manufacturer { get; set; }
-
-        [Required]
-        [MaxLength(100)]
         public string Model { get; set; }
-
-        [Required]
         public int Year { get; set; }
-
-        [Required]
         public VehicleType Type { get; set; } = VehicleType.Car;
-
         public string? Color { get; set; }
-
         public DateTime? RegistrationExpiry { get; set; }  = DateTime.UtcNow;
-
+        public string CreatedUserId { get; set; }
         public DateTime DateCreated { get; set; } = DateTime.UtcNow;
+        public DateTime? DateUpdated { get; set; }
+        public string? UpdatedByUserId { get; set; }
         public Vehicle()
         {
             Id = Guid.NewGuid();           

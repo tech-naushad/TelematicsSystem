@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TelematicsSystem.Messaging.Abstractions;
 using VehicleManagement.Domain.Entities;
+using VehicleManagement.Infrastructure.Persistence.Configurations;
 
 namespace VehicleManagement.Infrastructure
 {
@@ -15,12 +16,7 @@ namespace VehicleManagement.Infrastructure
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
-            modelBuilder.Entity<Vehicle>(entity =>
-            {
-                entity.HasKey(v=>v.Id);
-                entity.Property(v=>v.Type).HasConversion<string>(); //Will store enum as string
-            });
+            modelBuilder.ApplyConfiguration(new VehicleConfiguration());
         }
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {

@@ -4,7 +4,6 @@ using TelematicsSystem.Infrastructure.Configurations;
 using TelematicsSystem.Messaging.Consumers;
 using VehicleManagement.API;
 using VehicleManagement.Application;
-using VehicleManagement.Application.DTOs;
 using VehicleManagement.Infrastructure;
 
 
@@ -25,7 +24,7 @@ builder.Services.AddSwaggerGen(c =>
         Title = "Vehicle API",
         Version = "v1"
     });
-    c.SchemaFilter<CreateVehicleDtoExampleFilter>();
+   // c.SchemaFilter<CreateVehicleDtoExampleFilter>();
 }
 
 );

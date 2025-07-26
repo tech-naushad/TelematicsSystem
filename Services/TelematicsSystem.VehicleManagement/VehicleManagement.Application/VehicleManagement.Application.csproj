@@ -8,9 +8,11 @@
   </PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="AutoMapper" Version="15.0.1" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.7" />
+		<PackageReference Include="MediatR" Version="13.0.0" />			
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.7" />		
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.7" />
 		<PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="9.0.3" />
-		<PackageReference Include="TelematicsSystem.Messaging.Contracts" Version="1.0.0" />	
+		<PackageReference Include="TelematicsSystem.Messaging.Contracts" Version="1.0.0-dev" />	
 	</ItemGroup>
 	<ItemGroup>
 	  <ProjectReference Include="..\VehicleManagement.Domain\VehicleManagement.Domain.csproj" />

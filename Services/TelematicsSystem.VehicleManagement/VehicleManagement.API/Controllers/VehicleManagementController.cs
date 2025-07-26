@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using VehicleManagement.Application.DTOs;
+using VehicleManagement.Application.Dtos;
 using VehicleManagement.Application.Interfaces;
 
 namespace VehicleManagement.API.Controllers
@@ -15,7 +15,7 @@ namespace VehicleManagement.API.Controllers
         }
 
         [HttpPost(Name = "Register")]
-        public async Task<IActionResult> RegisterAsync([FromBody] VehicleDto createVehicleDto)
+        public async Task<IActionResult> RegisterAsync([FromBody] CreateVehicleDto createVehicleDto)
         {
             var response = await _service.RegisterVehicleAsync(createVehicleDto);
             return Ok(response);

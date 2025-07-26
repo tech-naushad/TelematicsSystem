@@ -1,6 +1,6 @@
 ﻿using TelematicsSystem.Messaging.Abstractions;
 using TelematicsSystem.Messaging.Contracts;
-using VehicleManagement.Application.DTOs;
+using VehicleManagement.Application.Dtos;
 using VehicleManagement.Application.Interfaces;
 using VehicleManagement.Domain.Entities;
 using VehicleManagement.Infrastructure;
@@ -16,11 +16,12 @@ namespace VehicleManagement.Application.Services
             _dbContext = dbContext;
             _publisher = publisher;
         }
-        public async Task<Guid> RegisterVehicleAsync(VehicleDto vehicleDto, CancellationToken cancellationToken = default)
+        public async Task<Guid> RegisterVehicleAsync(CreateVehicleDto vehicleDto, CancellationToken cancellationToken = default)
         {
             var vehicle = new Vehicle
             {
                 LicensePlate = vehicleDto.LicensePlate,
+                VIN = vehicleDto.VIN,
                 Manufacturer = vehicleDto.Manufacturer,
                 Model = vehicleDto.Model,
                 Year = vehicleDto.Year,
@@ -33,6 +34,7 @@ namespace VehicleManagement.Application.Services
            (
                 vehicle.Id,
                 vehicle.LicensePlate,
+                vehicle.VIN,
                 vehicle.Manufacturer,
                 vehicle.Model,
                vehicle.Year,

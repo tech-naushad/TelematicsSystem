@@ -13,4 +13,8 @@
     <Folder Include="Logging\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.7" />
+  </ItemGroup>
+
 </Project>
