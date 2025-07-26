@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	  <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	  <PackageOutputPath>C:\Workspace\TelematicsSystem\Artifacts</PackageOutputPath>	  
+	  <Version>1.0.0-dev</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TelematicsSystem.Messaging.Abstractions\TelematicsSystem.Messaging.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>
