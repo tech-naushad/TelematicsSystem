@@ -17,6 +17,7 @@ namespace TelematicsSystem.Messaging.Consumers
         public async Task Consume(ConsumeContext<VehicleCreatedEvent> context)
         {
             Console.WriteLine($"VehicleCreatedConsumer is called is {context.Message}");
+            await Task.CompletedTask;
         }
     }
 }
