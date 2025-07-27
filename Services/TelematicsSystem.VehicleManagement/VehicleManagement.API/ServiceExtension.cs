@@ -1,5 +1,5 @@
 ﻿
-using TelematicsSystem.Messaging.Abstractions;
+using TelematicsSystem.Abstractions;
 
 namespace VehicleManagement.API
 {
@@ -7,7 +7,7 @@ namespace VehicleManagement.API
     {
         public static IServiceCollection AddCommonServices(this IServiceCollection services)
         {            
-            services.AddScoped<IEventPublisher, EventPublisher>();
+            //services.AddScoped<IEventPublisher, EventPublisher>();
             return services;
         }
     }

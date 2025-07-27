@@ -8,14 +8,27 @@
   </PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="AutoMapper" Version="15.0.1" />
-		<PackageReference Include="MediatR" Version="13.0.0" />			
+		<PackageReference Include="MassTransit" Version="8.5.1" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.7" />		
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.7" />
 		<PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="9.0.3" />
-		<PackageReference Include="TelematicsSystem.Messaging.Contracts" Version="1.0.0-dev" />	
+		<!--<PackageReference Include="TelematicsSystem.Common" Version="1.0.4-dev" />
+		<PackageReference Include="TelematicsSystem.Abstractions" Version="1.0.4-dev" />
+		<PackageReference Include="TelematicsSystem.Contracts" Version="1.0.5-dev" />-->
 	</ItemGroup>
 	<ItemGroup>
 	  <ProjectReference Include="..\VehicleManagement.Domain\VehicleManagement.Domain.csproj" />
 	  <ProjectReference Include="..\VehicleManagement.Infrastructure\VehicleManagement.Infrastructure.csproj" />
-	</ItemGroup>	
+	</ItemGroup>
+	<ItemGroup>
+		<Reference Include="TelematicsSystem.Abstractions">
+			<HintPath>..\..\..\TelematicsSystem.Framework\TelematicsSystem.Abstractions\bin\Debug\net8.0\TelematicsSystem.Abstractions.dll</HintPath>
+		</Reference>
+		<Reference Include="TelematicsSystem.Common">
+			<HintPath>..\..\..\TelematicsSystem.Framework\TelematicsSystem.Common\bin\Debug\net8.0\TelematicsSystem.Common.dll</HintPath>
+		</Reference>
+		<Reference Include="TelematicsSystem.Contracts">
+			<HintPath>..\..\..\TelematicsSystem.Framework\TelematicsSystem.Contracts\bin\Debug\net8.0\TelematicsSystem.Contracts.dll</HintPath>
+		</Reference>
+	</ItemGroup>
 </Project>

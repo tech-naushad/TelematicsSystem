@@ -5,16 +5,12 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 	  <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-	  <PackageOutputPath>C:\Workspace\TelematicsSystem\Artifacts</PackageOutputPath>	
-	  <Version>1.0.0-dev</Version>
+	  <PackageOutputPath>C:\Workspace\TelematicsSystem\Artifacts</PackageOutputPath>
+	  <Version>1.0.4-dev</Version>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="MassTransit" Version="8.5.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\TelematicsSystem.Messaging.Contracts\TelematicsSystem.Messaging.Contracts.csproj" />
   </ItemGroup>
 
 </Project>

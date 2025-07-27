@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TelematicsSystem.Infrastructure.Configurations
+namespace TelematicsSystem.Common.AppSettings
 {
     public class RabbitMqSettings
     {

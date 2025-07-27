@@ -1,5 +1,5 @@
 ﻿
-namespace TelematicsSystem.Messaging.Abstractions
+namespace TelematicsSystem.Abstractions
 {
     public abstract class BaseEntity : IHasDomainEvents
     {

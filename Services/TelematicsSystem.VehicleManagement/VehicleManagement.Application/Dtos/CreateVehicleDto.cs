@@ -1,8 +1,8 @@
 ﻿using MediatR;
-using TelematicsSystem.Messaging.Abstractions;
-using TelematicsSystem.Messaging.Contracts;
+using TelematicsSystem.Abstractions;
+using TelematicsSystem.Common.Enums;
+using TelematicsSystem.Contracts;
 using VehicleManagement.Domain.Entities;
-using VehicleManagement.Domain.Enums;
 using VehicleManagement.Infrastructure;
 
 namespace VehicleManagement.Application.Dtos
@@ -21,7 +21,7 @@ namespace VehicleManagement.Application.Dtos
         public VehicleType Type { get; set; }
 
         public string? Color { get; set; }
-
+        public string? Source { get; set; }
         public DateTime? RegistrationExpiry { get; set; }
     }
     

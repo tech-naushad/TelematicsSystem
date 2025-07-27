@@ -3,11 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36301.6
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelematicsSystem.Messaging.Consumers", "TelematicsSystem.Messaging.Consumers\TelematicsSystem.Messaging.Consumers.csproj", "{F5575210-26ED-40D3-ACCE-7302B7BB6190}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelematicsSystem.Contracts", "TelematicsSystem.Contracts\TelematicsSystem.Contracts.csproj", "{78F45336-2CE9-4D30-A6F2-6CBE3AC749FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelematicsSystem.Messaging.Contracts", "TelematicsSystem.Messaging.Contracts\TelematicsSystem.Messaging.Contracts.csproj", "{78F45336-2CE9-4D30-A6F2-6CBE3AC749FE}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelematicsSystem.Messaging.Abstractions", "TelematicsSystem.Messaging.Abstractions\TelematicsSystem.Messaging.Abstractions.csproj", "{91A005D9-20B6-4660-9E17-77F8FEE21297}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelematicsSystem.Abstractions", "TelematicsSystem.Abstractions\TelematicsSystem.Abstractions.csproj", "{91A005D9-20B6-4660-9E17-77F8FEE21297}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelematicsSystem.Common", "TelematicsSystem.Common\TelematicsSystem.Common.csproj", "{B4EDB44A-6291-4DD9-BB67-243197998E71}"
 EndProject
@@ -19,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F5575210-26ED-40D3-ACCE-7302B7BB6190}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F5575210-26ED-40D3-ACCE-7302B7BB6190}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F5575210-26ED-40D3-ACCE-7302B7BB6190}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F5575210-26ED-40D3-ACCE-7302B7BB6190}.Release|Any CPU.Build.0 = Release|Any CPU
 		{78F45336-2CE9-4D30-A6F2-6CBE3AC749FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{78F45336-2CE9-4D30-A6F2-6CBE3AC749FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78F45336-2CE9-4D30-A6F2-6CBE3AC749FE}.Release|Any CPU.ActiveCfg = Release|Any CPU

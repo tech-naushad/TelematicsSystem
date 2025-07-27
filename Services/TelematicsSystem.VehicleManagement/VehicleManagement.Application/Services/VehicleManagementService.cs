@@ -1,5 +1,8 @@
-﻿using TelematicsSystem.Messaging.Abstractions;
-using TelematicsSystem.Messaging.Contracts;
+﻿using MassTransit;
+using MassTransit.Mediator;
+using TelematicsSystem.Abstractions;
+using TelematicsSystem.Common.Enums;
+using TelematicsSystem.Contracts;
 using VehicleManagement.Application.Dtos;
 using VehicleManagement.Application.Interfaces;
 using VehicleManagement.Domain.Entities;
@@ -9,12 +12,12 @@ namespace VehicleManagement.Application.Services
 {
     public class VehicleManagementService : IVehicleManagementService
     {
-        private readonly IEventPublisher _publisher;
         private readonly VehicleDbContext _dbContext;
-        public VehicleManagementService(VehicleDbContext dbContext, IEventPublisher publisher)
+        private readonly IPublishEndpoint _publishEndpoint;
+        public VehicleManagementService(VehicleDbContext dbContext, IPublishEndpoint publishEndpoint)
         {
             _dbContext = dbContext;
-            _publisher = publisher;
+            _publishEndpoint = publishEndpoint;
         }
         public async Task<Guid> RegisterVehicleAsync(CreateVehicleDto vehicleDto, CancellationToken cancellationToken = default)
         {
@@ -27,35 +30,41 @@ namespace VehicleManagement.Application.Services
                 Year = vehicleDto.Year,
                 Type = vehicleDto.Type,
                 Color = vehicleDto.Color,
-                RegistrationExpiry = DateTime.SpecifyKind(vehicleDto.RegistrationExpiry.Value, DateTimeKind.Utc)
+                RegistrationExpiry = DateTime.SpecifyKind(vehicleDto.RegistrationExpiry.Value, DateTimeKind.Utc),
+                Source = vehicleDto.Source
             };
 
-            vehicle.AddDomainEvent(new VehicleCreatedEvent
-           (
-                vehicle.Id,
-                vehicle.LicensePlate,
-                vehicle.VIN,
-                vehicle.Manufacturer,
-                vehicle.Model,
-               vehicle.Year,
-               vehicle.Type.ToString(),
-               vehicle.Color,
-               vehicle.RegistrationExpiry,
-               vehicle.DateCreated
-           ));
-
+            var @event = new VehicleCreatedEvent
+            {
+                VehicleId = Guid.NewGuid(),
+                LicensePlate = vehicle.LicensePlate,
+                VIN = vehicle.VIN,
+                Manufacturer = vehicle.Manufacturer,
+                Model = vehicle.Model,
+                Year = vehicle.Year,
+                VehicleType = vehicle.Type,
+                Color = vehicle.Color,
+                RegistrationExpiry = vehicle.RegistrationExpiry,
+                RegistrationDate = vehicle.RegistrationUpdated,
+                CorrelationId = Guid.NewGuid(),
+                Source = vehicle.Source,
+                EventCreatedAt = DateTime.UtcNow
+            };
+           
             _dbContext.Vehicles.Add(vehicle);
 
             await _dbContext.SaveChangesAsync(cancellationToken);
 
+            await _publishEndpoint.Publish(@event);
 
-            var domainEvents = _dbContext.GetDomainEvents();
-            if (domainEvents.Any())
-            {
-                await _publisher.PublishAsync<VehicleCreatedEvent>(domainEvents);
-            }
+           // await _mediator.Publish(@event);
+           //var domainEvents = _dbContext.GetDomainEvents();
+           //if (domainEvents.Any())
+           //{
+           //    await _publisher.PublishAsync<VehicleCreatedEvent>(domainEvents);
+           //}
 
-            return vehicle.Id;
+            return vehicle.VehicleId;
         }
     }
 }

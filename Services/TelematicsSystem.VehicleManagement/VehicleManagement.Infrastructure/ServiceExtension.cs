@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using VehicleManagement.Infrastructure.Persistence;
 
 namespace VehicleManagement.Infrastructure
 {
@@ -13,6 +14,8 @@ namespace VehicleManagement.Infrastructure
             services.AddDbContext<VehicleDbContext>(options =>
             options.UseNpgsql(configuration.GetConnectionString("VehicleDbConnection"))
             );
+          
+            services.AddScoped<DbInitializer>();
             return services;
         }
     }

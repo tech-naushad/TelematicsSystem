@@ -25,12 +25,22 @@
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
-		<PackageReference Include="TelematicsSystem.Common" Version="1.0.0-dev" />
-		<PackageReference Include="TelematicsSystem.Infrastructure" Version="1.0.0-dev" />
-		<PackageReference Include="TelematicsSystem.Messaging.Consumers" Version="1.0.0-dev" />
-		<PackageReference Include="TelematicsSystem.Messaging.Contracts" Version="1.0.0-dev" />	
+		<!--<PackageReference Include="TelematicsSystem.Common" Version="1.0.4-dev" />
+		<PackageReference Include="TelematicsSystem.Abstractions" Version="1.0.4-dev" />
+		<PackageReference Include="TelematicsSystem.Contracts" Version="1.0.5-dev" />-->
 	</ItemGroup>
 	<ItemGroup>
 	  <ProjectReference Include="..\VehicleManagement.Application\VehicleManagement.Application.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Reference Include="TelematicsSystem.Abstractions">
+	    <HintPath>..\..\..\TelematicsSystem.Framework\TelematicsSystem.Abstractions\bin\Debug\net8.0\TelematicsSystem.Abstractions.dll</HintPath>
+	  </Reference>
+	  <Reference Include="TelematicsSystem.Common">
+	    <HintPath>..\..\..\TelematicsSystem.Framework\TelematicsSystem.Common\bin\Debug\net8.0\TelematicsSystem.Common.dll</HintPath>
+	  </Reference>
+	  <Reference Include="TelematicsSystem.Contracts">
+	    <HintPath>..\..\..\TelematicsSystem.Framework\TelematicsSystem.Contracts\bin\Debug\net8.0\TelematicsSystem.Contracts.dll</HintPath>
+	  </Reference>
 	</ItemGroup>
 </Project>

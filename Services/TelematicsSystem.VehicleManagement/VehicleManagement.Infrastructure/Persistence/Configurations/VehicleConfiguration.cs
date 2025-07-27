@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System.ComponentModel.DataAnnotations;
 using VehicleManagement.Domain.Entities;
-using VehicleManagement.Domain.Enums;
 
 namespace VehicleManagement.Infrastructure.Persistence.Configurations
 {
@@ -11,9 +10,9 @@ namespace VehicleManagement.Infrastructure.Persistence.Configurations
         public void Configure(EntityTypeBuilder<Vehicle> builder)
         {
             builder.ToTable("Vehicles");
-            builder.HasKey(x => x.Id);
+            builder.HasKey(x => x.VehicleId);
             //set manually (new Guid() in the constructor).
-            builder.Property(v => v.Id).ValueGeneratedNever().IsRequired();
+            builder.Property(v => v.VehicleId).ValueGeneratedNever().IsRequired();
           
             builder.Property(x => x.LicensePlate)
                 .IsRequired()
@@ -57,7 +56,8 @@ namespace VehicleManagement.Infrastructure.Persistence.Configurations
 
             builder.Property(v => v.DateUpdated);
 
-            builder.Property(v => v.UpdatedByUserId);            
+            builder.Property(v => v.UpdatedByUserId);
+            builder.Property(v => v.Source);
         } 
     }
 }

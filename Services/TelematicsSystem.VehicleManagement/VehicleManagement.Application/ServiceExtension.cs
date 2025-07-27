@@ -9,8 +9,12 @@ namespace VehicleManagement.Application
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
             //services.AddAutoMapper(Assembly.GetExecutingAssembly());
-            services.AddScoped<IVehicleManagementService, VehicleManagementService>();            
-          
+            
+            //services.AddMediatR(cfg =>
+            //{
+            //    cfg.RegisterServicesFromAssemblyContaining<VehicleCreatedEventHandler>();
+            //});
+            services.AddScoped<IVehicleManagementService, VehicleManagementService>();
             return services;
         }
     }

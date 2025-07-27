@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using TelematicsSystem.Messaging.Abstractions;
+using TelematicsSystem.Abstractions;
 using VehicleManagement.Domain.Entities;
 using VehicleManagement.Infrastructure.Persistence.Configurations;
 
 namespace VehicleManagement.Infrastructure
 {
-    public class VehicleDbContext: DbContext, IDomainEventsAccessor
+    public class VehicleDbContext: DbContext
     {        
         public VehicleDbContext(DbContextOptions<VehicleDbContext> options)
             : base(options)
@@ -22,21 +22,7 @@ namespace VehicleManagement.Infrastructure
         {
             // Let it just save, and don’t dispatch events here.
             return await base.SaveChangesAsync(cancellationToken);
-        }
-        public List<IDomainEvent> GetDomainEvents()
-        {
-            return ChangeTracker
-                .Entries<IHasDomainEvents>()
-                .SelectMany(e => e.Entity.DomainEvents)
-                .ToList();
-        }
-        public void ClearDomainEvents()
-        {
-            foreach (var entity in ChangeTracker.Entries<IHasDomainEvents>())
-            {
-                entity.Entity.ClearDomainEvents();
-            }
-        }
+        }      
 
     }
 }

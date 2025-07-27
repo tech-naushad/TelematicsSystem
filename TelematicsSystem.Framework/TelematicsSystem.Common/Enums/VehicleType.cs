@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VehicleManagement.Domain.Enums
+namespace TelematicsSystem.Common.Enums
 {
     public enum VehicleType
     {

@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using TelematicsSystem.Messaging.Abstractions;
-using VehicleManagement.Domain.Enums;
+using TelematicsSystem.Abstractions;
+using TelematicsSystem.Common.Enums;
 
 namespace VehicleManagement.Domain.Entities
 {
-    public class Vehicle: BaseEntity
+    public class Vehicle//: BaseEntity
     {
-        public Guid Id { get; set; } 
+        public Guid VehicleId { get; set; } 
         public string LicensePlate { get; set; }
         public string VIN { get; set; }
         public string Manufacturer { get; set; }
@@ -20,11 +20,13 @@ namespace VehicleManagement.Domain.Entities
         public DateTime? RegistrationExpiry { get; set; }  = DateTime.UtcNow;
         public string CreatedUserId { get; set; }
         public DateTime DateCreated { get; set; } = DateTime.UtcNow;
-        public DateTime? DateUpdated { get; set; }
         public string? UpdatedByUserId { get; set; }
+        public DateTime? DateUpdated { get; set; }
+        public DateTime RegistrationUpdated { get; set; }
+        public string? Source { get; set; }
         public Vehicle()
         {
-            Id = Guid.NewGuid();           
+            VehicleId = Guid.NewGuid();           
         }
     }
 }

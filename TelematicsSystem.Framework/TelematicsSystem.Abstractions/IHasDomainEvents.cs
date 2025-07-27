@@ -1,4 +1,4 @@
-﻿namespace TelematicsSystem.Messaging.Abstractions
+﻿namespace TelematicsSystem.Abstractions
 {
     public interface IHasDomainEvents
     {

@@ -1,6 +1,6 @@
 ﻿using MassTransit;
 
-namespace TelematicsSystem.Messaging.Abstractions
+namespace TelematicsSystem.Abstractions
 {
     public class EventPublisher : IEventPublisher
     {

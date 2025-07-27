@@ -6,11 +6,11 @@
     <Nullable>enable</Nullable>
 	  <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 	  <PackageOutputPath>C:\Workspace\TelematicsSystem\Artifacts</PackageOutputPath>	  
-	  <Version>1.0.0-dev</Version>
+	  <Version>1.0.5-dev</Version>
   </PropertyGroup>
-
   <ItemGroup>
-    <ProjectReference Include="..\TelematicsSystem.Messaging.Abstractions\TelematicsSystem.Messaging.Abstractions.csproj" />
+    <ProjectReference Include="..\TelematicsSystem.Abstractions\TelematicsSystem.Abstractions.csproj" />
+    <ProjectReference Include="..\TelematicsSystem.Common\TelematicsSystem.Common.csproj" />
   </ItemGroup>
 
 </Project>
